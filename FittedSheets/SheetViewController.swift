@@ -524,8 +524,8 @@ public class SheetViewController: UIViewController {
         let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
         
         self.contentViewController.adjustForKeyboard(height: self.keyboardHeight)
-        self.resize(to: self.currentSize, duration: duration, options: animationCurve, animated: true, complete: {
-            self.resize(to: self.currentSize)
+        self.resize(to: self.currentSize, duration: duration, options: animationCurve, animated: false, complete: {
+            self.resize(to: self.currentSize, animated: false)
         })
     }
     
