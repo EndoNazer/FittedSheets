@@ -131,7 +131,7 @@ public class SheetContentViewController: UIViewController {
     
     func updateAfterLayout() {
         self.size = self.childViewController.view.bounds.height
-        //self.updatePreferredHeight()
+        self.updatePreferredHeight()
     }
     
     func adjustForKeyboard(height: CGFloat) {
@@ -216,8 +216,8 @@ public class SheetContentViewController: UIViewController {
         Constraints(for: self.childViewController.view) { view in
             view.left.pinToSuperview()
             view.right.pinToSuperview()
-            self.contentBottomConstraint = view.bottom.pinToSuperview()
-                view.top.pinToSuperview()
+            view.bottom.pinToSuperview()
+            view.top.pinToSuperview()
         }
         if self.options.shouldExtendBackground, self.options.pullBarHeight > 0 {
             self.childViewController.compatibleAdditionalSafeAreaInsets = UIEdgeInsets(top: self.options.pullBarHeight, left: 0, bottom: 0, right: 0)
